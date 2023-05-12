@@ -1,0 +1,43 @@
+
+//criar tabelas
+CREATE TABLE Vendedores(
+    id              int PRIMARY KEY auto_increment,
+    ncadastro       varchar(30),
+    nome            varchar(30)
+    );
+
+//inserir dados
+INSERT INTO pessoas 
+(nome,nascimento,sexo,peso,altura,nacionalidade)
+VALUES 
+('Gilberto', '1983-01-02', 'M', '78.5', '1.80', 'Brasil' );
+
+//alterar registro
+UPDATE pessoas SET
+nacionalidade = "Brasil"
+WHERE id=2;
+
+//exclui um registro
+DELETE FROM pessoas WHERE id="3";
+
+//Busca especifica
+SELECT *FROM pessoas WHERE nome LIKE '%condição especifica%';
+
+//Limpa o registro da tabela
+TRUNCATE TABLE pessoas;
+
+//cria tabela categoria
+CREATE TABLE categorias(
+    id   int PRIMARY KEY auto_increment,
+    nome varchar(50)
+);
+
+//cria tabela produtos
+CREATE TABLE produtos(
+    id           int PRIMARY KEY auto_increment,
+    categoria_id int,
+    nome         varchar(60),
+    preco        decimal(11.2),
+    quantidade   int
+);
+
